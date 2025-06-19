@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links">
+      <a href="auth.html">Entrar</a>
+      <a href="auth.html">Cadastre-se</a>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="#api" onclick="showPopup()">API</a></li>
+      <li><a href="#versionpro" onclick="showPopup()">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Cifra de César</h1>
+    <div class="crypto-box">
+      <textarea id="inputText" placeholder="Digite seu texto..."></textarea>
+      <textarea id="outputText" placeholder="Resultado..." readonly></textarea>
+    </div>
+    <br>
+    <div class="button-group">
+      <button onclick="criptografar()">Criptografar</button>
+      <button onclick="descriptografar()">Descriptografar</button>
+    </div>
+
+    <!-- Carrossel -->
+    <div class="carousel" id="carousel">
+      <button class="carousel-btnscrol left" onclick="scrollCarousel(-1)">&#8592;</button>
+
+      <div class="carousel-track">
+        <button class="carousel-btn" onclick="showPopup()">Base64</button>
+        <button class="carousel-btn" onclick="showPopup()">Base32</button>
+        <button class="carousel-btn" onclick="showPopup()">Hash</button>
+        <button class="carousel-btn" onclick="showPopup()">AES</button>
+        <button class="carousel-btn" onclick="showPopup()">RSA</button>
+        <button class="carousel-btn" onclick="showPopup()">Vigenère</button>
+        <button class="carousel-btn">César</button>
+        <button class="carousel-btn" onclick="showPopup()">MD5</button>
+        <button class="carousel-btn" onclick="showPopup()">Binário</button>
+        <button class="carousel-btn" onclick="showPopup()">SHA-1</button>
+        <button class="carousel-btn" onclick="showPopup()">SHA-512</button>
+        <button class="carousel-btn" onclick="showPopup()">HEX</button>
+      </div>
+
+      <button class="carousel-btnscrol right" onclick="scrollCarousel(1)">&#8594;</button>
+    </div>  
+  </main>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h3>Agradecemos por experimentar o CriptoSeg</h3>
+      <p>Para acessar esta funcionalidade, você precisa se cadastrar.</p>
+      <button onclick="location.href='auth.html'">Cadastre-se</button>
+      <button onclick="location.href='auth.html'">Entrar</button>
+      <button onclick="hidePopup()">Continuar na versão gratuita</button>
+    </div>
+  </div>
+  
+  <footer style="text-align: center; padding: 1rem; color: #666; font-size: 0.8rem; margin-top: 2rem;">Versão 1.0v</footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG - API</title>
+  <link rel="stylesheet" href="css/api.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links" id="user-info-header" style="position: relative;"></div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="api.html" class="active">API</a></li>
+      <li><a href="versionpro.html">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Sua Chave API</h1>
+    <div id="api-container">
+        <div class="api-key-box">
+            <input type="password" id="apiKey" readonly value="SUA_CHAVE_SECRETA_DA_API" />
+            <button onclick="toggleApiKey()">👀</button>
+            <button onclick="copyApiKey()">COPIAR</button>
+        </div>
+    </div>
+
+    <div id="pro-required">
+      ⚠️ Esta funcionalidade é exclusiva para contas <strong>PRO</strong>.
+      <a href="versionpro.html" style="color: #feb32b; text-decoration: underline;">Clique aqui para se tornar PRO</a>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>Importante:</strong> Esta é a sua chave pessoal. Não a divulgue a ninguém em quem não confie, nem a incorpore em scripts ou softwares dos quais ela possa ser facilmente recuperada.</p>
+      <p>Ao enviar dados usando sua chave de API, você concorda com nossos <a href="#">Termos de Serviço</a> e <a href="#">Aviso de Privacidade</a>, e com o compartilhamento dos seus envios com a comunidade de segurança.</p>
+      <p><strong>Não envie nenhuma informação pessoal</strong>; não somos responsáveis pelo conteúdo dos seus envios.</p>
+    </div>
+
+    <div class="how-to-box">
+      <h2>Como usar a API</h2>
+      <p>A API RESTful da CRYPTOSEG permite que desenvolvedores realizem diversas operações de criptografia, descriptografia e hashing com segurança e praticidade. Para utilizar, é necessário autenticação via Firebase e o uso da chave de API exclusiva.</p>
+
+      <h3>🛡️ Autenticação</h3>
+      <p>Todas as requisições devem conter:</p>
+      <ul>
+        <li><strong>API Key</strong> no header: <code>x-api-key</code></li>
+      </ul>
+
+      <h3>🔐 Criptografias Suportadas</h3>
+      <ul>
+        <li>Base64 / Base32</li>
+        <li>Cifra de César</li>
+        <li>Cifra de Vigenère</li>
+        <li>AES</li>
+        <li>RSA</li>
+        <li>Hash: MD5, SHA-1, SHA-256, SHA-512</li>
+        <li>Conversão Binária / Hexadecimal</li>
+      </ul>
+
+      <h3>📋 Endpoints</h3>
+      <ul>
+        <li><code>POST /base64</code> – Codifica/decodifica Base64</li>
+        <li><code>POST /base32</code> – Codifica/decodifica Base32</li>
+        <li><code>POST /cesar</code> – Cifra de César</li>
+        <li><code>POST /vigenere</code> – Cifra de Vigenère</li>
+        <li><code>POST /aes</code> – Criptografia AES</li>
+        <li><code>POST /rsa/generate</code> – Gera par de chaves RSA</li>
+        <li><code>POST /rsa</code> – Criptografa/descriptografa RSA</li>
+        <li><code>POST /hash</code> – Gera hash (MD5, SHA-1, etc.)</li>
+        <li><code>POST /binario</code> – Conversão de binário</li>
+        <li><code>POST /hex</code> – Conversão de hexadecimal</li>
+      </ul>
+
+      <h3>📦 Exemplo de uso via <code>curl</code></h3>
+      <pre><code>curl -X POST https://suaapi.com/base64 \
+      -H "Content-Type: application/json" \
+      -H "x-api-key: SUA_CHAVE_API" \
+      -d '{"modo": "codificar", "mensagem": "Olá mundo"}'</code></pre>
+
+      <pre><code>
+curl.exe -X GET 
+"https://cryptoseg-api-production.up.railway.app/cesar/encode?text=hello&shift=5" `
+-H "accept: application/json" `
+-H "x-api-key: SUA-API"
+      </code></pre>
+
+      <h3>🚀 Deploy</h3>
+      <ul>
+        <li>A API é hospedada no Railway e acessível 24/7.</li>
+        <li>Você pode testá-la no Swagger ou Postman usando sua chave API.</li>
+      </ul>
+
+      <h3>📘 Documentação Swagger</h3>
+      <p>Acesse a documentação Swagger para explorar e testar os endpoints: <a href="#" style="color: #00ffae;">https://cryptoseg-api-production.up.railway.app/docs</a></p>
+
+      <h3>🔐 Segurança</h3>
+      <ul>
+        <li>Todos os acessos requerem autenticação (API Key).</li>
+        <li>Use HTTPS sempre que possível.</li>
+        <li>Não compartilhe sua API KEY.</li>
+      </ul>
+
+      <h3>📄 Licença</h3>
+      <p>MIT © Marcos Vinícius Rocha Silva</p>
+    </div>
+
+  </main>
+
+    <!-- Modal de exclusão de conta -->
+    <div id="deleteAccountModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <h2>Excluir Conta</h2>
+        <p>Você tem certeza? Esta ação é irreversível.</p>
+        <label for="confirmDeleteCheckbox">
+          Confirmo que desejo excluir minha conta
+          <input type="checkbox" id="confirmDeleteCheckbox" />
+        </label><br/>
+        Caso queira realmente exlcuir a conta digite:<br/> Eu tenho certeza e quero excluir a conta
+        <input type="text" id="confirmText" placeholder="Eu tenho certeza e quero excluir a conta">
+        <button onclick="confirmarExclusaoConta()">Excluir Conta Permanentemente</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+
+  <footer class="footer">
+    Versão 1.21v
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>

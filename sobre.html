@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG</title>
+  <link rel="stylesheet" href="css/sobre.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links">
+      <a href="index.html">Início</a>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="#api" onclick="showPopup()">API</a></li>
+      <li><a href="#versionpro" onclick="showPopup()">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <aside class="sumario">
+      <h3>Sumário</h3>
+      <ul>
+        <li><a href="#sec1">A História da CryptoSeg</a></li>
+        <li><a href="#sec2">Identidade e Propósito</a></li>
+        <li><a href="#sec3">Missão e Problema Resolvido</a></li>
+        <li><a href="#sec4">Diferenciais e Visão</a></li>
+      </ul>
+    </aside>
+  
+    <section class="conteudo">
+      <div id="sec1" class="box">
+        <h2>A História da CryptoSeg</h2>
+        <p>Em um pequeno escritório no interior de Minas Gerais, o programador Paulo Meideiros enfrentava um dilema simples, mas urgente: como proteger mensagens confidenciais de forma fácil, rápida e sem depender de softwares complicados?</p>
+        <p>Com formação em tecnologia e paixão por segurança digital, Paulo sempre acreditou que a privacidade deveria ser um direito acessível — não um privilégio técnico. Após ver colegas, amigos e até professores com dificuldades para proteger informações básicas — como documentos, senhas ou até recados pessoais —, percebeu que o mercado ignorava completamente o usuário comum.</p>
+        <p>Foi aí que nasceu a ideia da CryptoSeg: uma plataforma minimalista, intuitiva e eficaz, feita para criptografar e descriptografar textos de forma segura, rápida e acessível a qualquer pessoa, mesmo sem conhecimento técnico.</p>
+        <p>Em poucas semanas, Paulo desenvolveu o protótipo inicial: um site leve, direto ao ponto, sem anúncios, sem coleta de dados, e com uma interface escura, pensada para conforto visual e sigilo.</p>
+        <p>O objetivo era claro: criar uma ferramenta confiável, ética e transparente, guiada pelos princípios de simplicidade, liberdade e segurança digital.</p>
+        <p>O projeto cresceu organicamente, impulsionado por fóruns, comunidades de tecnologia e educadores que viram valor não apenas na ferramenta, mas na proposta: ensinar o básico de criptografia enquanto se usa.</p>
+        <p>Hoje, a CryptoSeg continua sendo fiel ao seu propósito. Sob liderança de Paulo Meideiros, evolui com a ajuda de colaboradores, usuários e entusiastas da privacidade. A missão segue a mesma:</p>
+        <blockquote>“Empoderar pessoas comuns com ferramentas simples para proteger o que é delas.”</blockquote>
+      </div>
+  
+      <div id="sec2" class="box">
+        <h2>Identidade e Propósito</h2>
+        <p><strong>Qual é a missão principal do CryptoSeg?</strong><br>
+        Tornar a criptografia acessível a todos, facilitando a proteção de informações pessoais e profissionais de forma simples, gratuita e intuitiva.</p>
+      </div>
+  
+      <div id="sec3" class="box">
+        <h2>Missão e Problema Resolvido</h2>
+        <p><strong>Qual problema específico a empresa resolve?</strong><br>
+        A dificuldade que usuários leigos têm em proteger textos e mensagens com segurança sem precisar entender de programação ou instalar ferramentas complexas.</p>
+      </div>
+  
+      <div id="sec4" class="box">
+        <h2>Diferenciais e Visão</h2>
+        <p><strong>O que diferencia o CryptoSeg de outras ferramentas de criptografia online?</strong><br>
+        Simplicidade de uso, foco em privacidade (sem armazenamento de dados), interface limpa e abordagem educacional com linguagem acessível.</p>
+  
+        <p><strong>Como a empresa quer ser percebida pelo público?</strong><br>
+        Como uma plataforma confiável, segura, prática e ética, voltada para a proteção da privacidade do usuário.</p>
+  
+        <p><strong>Qual é a visão de longo prazo?</strong><br>
+        Ser referência em ferramentas acessíveis de segurança digital, ampliando funcionalidades e promovendo educação sobre privacidade online.</p>
+      </div>
+    </section>
+  </main>
+  
+  
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h3>Agradecemos por experimentar o CriptoSeg</h3>
+      <p>Para acessar esta funcionalidade, você precisa se cadastrar.</p>
+      <button onclick="location.href='auth.html'">Cadastre-se</button>
+      <button onclick="location.href='auth.html'">Entrar</button>
+      <button onclick="hidePopup()">Continuar na versão gratuita</button>
+    </div>
+  </div>
+  
+  <footer style="text-align: center; padding: 1rem; color: #666; font-size: 0.8rem; margin-top: 2rem;">Versão 1.0v</footer>
+
+  <script src="js/sobre.js"></script>
+</body>
+</html>

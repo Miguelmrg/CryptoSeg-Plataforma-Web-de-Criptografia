@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links" id="user-info-header" style="position: relative;"></div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="versionpro.html">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1 id="algoritmoTitulo">Cifra de César</h1>
+  
+    <div class="crypto-box">
+      <textarea id="inputText" placeholder="Digite seu texto..."></textarea>
+      <textarea id="outputText" placeholder="Resultado..." readonly></textarea>
+  
+      <!-- Campo de senha -->
+      <input type="password" id="senhaCampo" placeholder="Digite uma senha... (senha base 'segredo')" style="display: none;" />
+    </div>
+  
+    <div class="button-group">
+      <button onclick="criptografar()">Criptografar</button>
+      <button onclick="descriptografar()">Descriptografar</button>
+    </div>
+
+    <!-- Somente visível se RSA for selecionado -->
+    <div id="rsa-section" style="display: none; text-align: center; margin-top: 2rem;">
+      <div class="button-group">
+        <button onclick="gerarChavesRSA()">Gerar Par de Chaves RSA</button>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <label for="chavePublica" style="display: block; color: #feb32b; font-weight: bold; margin-bottom: 0.5rem;">
+          Chave Pública:
+        </label>
+        <textarea id="chavePublica" placeholder="Chave Pública..." rows="5" readonly></textarea>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <label for="chavePrivada" style="display: block; color: #feb32b; font-weight: bold; margin-bottom: 0.5rem;">
+          Chave Privada:
+        </label>
+        <textarea id="chavePrivada" placeholder="Chave Privada..." rows="5" readonly></textarea>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <label for="chaveInput" style="display: block; color: #feb32b; font-weight: bold; margin-bottom: 0.5rem;">
+          Chave para uso (criptografia ou descriptografia):
+        </label>
+        <textarea id="chaveInput" placeholder="Cole aqui a chave para uso..." rows="4"></textarea>
+      </div>
+
+      <p style="margin-top: 1.5rem; color: #ccc; font-size: 0.95rem;">
+        <strong>ℹ️ Importante:</strong> Use a <span style="color: #feb32b;">chave pública</span> para <strong>criptografar</strong> e a <span style="color: #feb32b;">chave privada</span> para <strong>descriptografar</strong>.
+      </p>
+      <p style="font-size: 0.85rem; color: #aaa; margin-top: 0.5rem;">
+        Você pode reutilizar suas chaves mais tarde. Basta colar aqui a pública (para criptografar) ou a privada (para descriptografar).
+      </p>
+    </div>
+  </main>
+  
+
+    <div class="carousel" id="carousel">
+      <button class="carousel-btnscrol left">&#8592;</button>
+      <div class="carousel-track">
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('base64')">Base64</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('base32')">Base32</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('hash')">Hash</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('aes')">AES</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('rsa')">RSA</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('vigenere')">Vigenère</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('cesar')">César</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('md5')">MD5</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('binario')">Binário</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('sha1')">SHA-1</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('sha512')">SHA-512</button>
+        <button class="carousel-btn" onclick="selecionarAlgoritmo('hex')">HEX</button>
+      </div>
+      <button class="carousel-btnscrol right">&#8594;</button>
+    </div>
+
+    <!-- Modal de exclusão de conta -->
+    <div id="deleteAccountModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <h2>Excluir Conta</h2>
+        <p>Você tem certeza? Esta ação é irreversível.</p>
+        <label for="confirmDeleteCheckbox">
+          Confirmo que desejo excluir minha conta
+          <input type="checkbox" id="confirmDeleteCheckbox" />
+        </label><br/>
+        Caso queira realmente exlcuir a conta digite:<br/> Eu tenho certeza e quero excluir a conta
+        <input type="text" id="confirmText" placeholder="Eu tenho certeza e quero excluir a conta">
+        <button onclick="confirmarExclusaoConta()">Excluir Conta Permanentemente</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+
+
+  <footer style="text-align: center; padding: 1rem; color: #666; font-size: 0.8rem; margin-top: 2rem;">
+    Versão 1.21v
+  </footer>
+
+  <!-- Firebase + Script -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://crypto-js.googlecode.com/svn/tags/3.1.9-1/build/rollups/md5.js"></script>
+  <script src="https://crypto-js.googlecode.com/svn/tags/3.1.9-1/build/rollups/sha1.js"></script>
+  <script src="https://crypto-js.googlecode.com/svn/tags/3.1.9-1/build/rollups/sha512.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRYPTOSEG - Autenticação</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="branding">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span>
+            </a>
+        </div>
+    </header>
+
+
+    <div class="auth-container">
+        <!-- Seção de informações do usuário (visível apenas quando logado) -->
+        <div id="user-info" class="hidden">
+            <h2>Bem-vindo, <span id="user-name"></span>!</h2>
+            <p>Email: <span id="user-email"></span></p>
+            <button id="sign-out-button">Sair</button>
+            <button id="reset-password-button">Redefinir Senha</button>
+        </div>
+    
+        
+        <!-- Seção de autenticação (visível apenas quando deslogado) -->
+        <div id="auth-section">
+            <div class="auth-options">
+                <button id="login-tab" class="auth-option-btn active">Entrar</button>
+                <button id="register-tab" class="auth-option-btn">Cadastrar</button>
+            </div>
+            
+            <!-- Mensagem de erro -->
+            <div id="error-message" class="error-message"></div>
+            
+            <!-- Formulário de Login -->
+            <div id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" placeholder="Digite sua senha">
+                </div>
+                <button id="login-button">Entrar</button>
+                <div class="secondary-action">
+                    <a id="forgot-password-link">Esqueci minha senha</a>
+                </div>
+            </div>
+            
+            <!-- Formulário de Cadastro -->
+            <div id="register-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Senha</label>
+                    <input type="password" id="register-password" placeholder="Crie uma senha (mínimo 6 caracteres)">
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirmar Senha</label>
+                    <input type="password" id="register-confirm-password" placeholder="Digite a senha novamente">
+                </div>
+                <button id="register-button">Cadastrar</button>
+                <div class="secondary-action">
+                    <div style="color: white;">Já tem uma conta? <a id="switch-to-login">Faça login</a></div>
+                </div>
+            </div>
+            
+            <!-- Formulário de Recuperação de Senha -->
+            <div id="forgot-password-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label for="reset-email">Email</label>
+                    <input type="email" id="reset-email" placeholder="Digite seu email cadastrado">
+                </div>
+                <button id="send-reset-button">Enviar Link de Redefinição</button>
+                <div class="secondary-action">
+                    <a id="back-to-login">Voltar para o login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Importando Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

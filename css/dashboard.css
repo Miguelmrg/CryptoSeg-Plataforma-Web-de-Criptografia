@@ -1,0 +1,276 @@
+/* Estilo específico do dashboard (com base no styles.css do index) */
+
+textarea {
+  width: 80%;
+  height: 100px;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #262d35;
+  color: white;
+}
+
+.button-group button {
+  background: #feb32b;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Carrossel exatamente igual ao index.html */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  margin-top: 2rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.carousel-track.animate {
+  transition: none;
+}
+
+.carousel-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #feb32b;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  min-width: 185px;
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.3);
+}
+
+/* Setas de navegação */
+.carousel-btnscrol {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #feb32b;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-btnscrol.left {
+  left: 0;
+}
+
+.carousel-btnscrol.right {
+  right: 1px;
+}
+
+.carousel-btnscrol:hover {
+  transform: scale(1.5) translateY(-50%);
+}
+
+/* Ajustes responsivos se necessário */
+@media (max-width: 600px) {
+  .carousel-btn {
+    font-size: 1.5rem;
+    min-width: 140px;
+    padding: 0.8rem;
+  }
+
+  .carousel-btnscrol {
+    font-size: 1.8rem;
+  }
+}
+
+#senhaCampo {
+  width: 80%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #262d35;
+  color: white;
+  margin-top: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+}
+
+/* ===== Estilo para INPUT TEXT (caixa de digitação da confirmação) ===== */
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #262d35;
+  color: white;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  transition: border 0.2s ease;
+}
+
+.modal-content input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+/* Estilo no foco */
+.modal-content input[type="text"]:focus {
+  border-color: #feb32b;
+  outline: none;
+}
+
+/* ===== Estilo da CHECKBOX personalizada ===== */
+.modal-content input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #555;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Check quando clicado */
+.modal-content input[type="checkbox"]:checked {
+  background-color: #feb32b;
+  border-color: #feb32b;
+}
+
+/* Checkmark (símbolo de ✅ personalizado) */
+.modal-content input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 8px;
+  height: 14px;
+  border: solid #1e1e1e;
+  border-width: 0 3px 3px 0;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Exibir checkmark ao marcar */
+.modal-content input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+/* Alinhamento do label */
+.modal-content label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+
+/* Check quando clicado */
+.modal-content input[type="checkbox"]:checked {
+  background-color: #feb32b;
+  border-color: #feb32b;
+}
+
+/* Checkmark (o símbolo de ✅) */
+.modal-content input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 8px;
+  height: 14px;
+  border: solid #1e1e1e;
+  border-width: 0 3px 3px 0;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Mostrar o símbolo quando marcado */
+.modal-content input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Botão de excluir: fundo laranja forte, texto preto */
+.modal-content button:first-of-type {
+  background-color: #feb32b;
+  color: #000;
+}
+
+.modal-content button:first-of-type:hover {
+  background-color: #e6a200;
+}
+
+/* Botão cancelar: fundo escuro, texto cinza claro */
+.modal-content button:last-of-type {
+  background-color: #333;
+  color: #ccc;
+}
+
+.modal-content button:last-of-type:hover {
+  background-color: #444;
+  color: #fff;
+}

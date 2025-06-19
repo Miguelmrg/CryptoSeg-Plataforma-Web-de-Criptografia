@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0c1221;
+    color: white;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0c1221;
+    z-index: 10;
+  }
+  
+  .branding {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #feb32b;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .auth-links a {
+    margin-left: 1rem;
+    color: #feb32b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 200;       /* Maior que o da sidebar */
+  }
+  
+  
+  .sidebar {
+    position: fixed;
+    left: -200px;
+    top: 10px;
+    width: 200px;
+    height: 100%;
+    background: #0c1221;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 100; /* Garante que ela fique abaixo do menu-icon */
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar ul li a {
+    display: block;
+    color: #feb32b;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1a1f2e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: left;
+  }
+  
+  .sobre-content h2 {
+    color: #feb32b;
+    margin-bottom: 1rem;
+  }
+  
+  .sobre-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .popup {
+    background: white;
+    color: black;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .popup button {
+    margin-top: 1rem;
+    background-color: #feb32b;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+  
+  /* Sumário lateral */
+  .sumario {
+    position: fixed;
+    right: 2rem;
+    top: 120px;
+    width: 220px;
+    max-height: 400px; /* Limite a altura do sumário para 400px */
+    background-color: #1a1f2e;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #feb32b;
+    z-index: 150;
+
+    overflow-y: auto; /* Ativa barra de rolagem vertical quando necessário */
+    scrollbar-width: thin; /* Firefox: barra de rolagem fina */
+    scrollbar-color: #feb32b #1a1f2e; /* cor da barra e do fundo */
+   }
+
+   /* Estilizando a barra de rolagem no Chrome, Edge e Safari */
+    .sumario::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .sumario::-webkit-scrollbar-track {
+        background: #1a1f2e;
+        border-radius: 8px;
+    }
+
+    .sumario::-webkit-scrollbar-thumb {
+        background-color: #feb32b;
+        border-radius: 8px;
+        border: 2px solid #1a1f2e;
+    }
+
+    
+    .sumario h3 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        color: #feb32b;
+        border-bottom: 1px solid #feb32b;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sumario ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .sumario ul li {
+        margin-bottom: 0.8rem;
+    }
+    
+    .sumario ul li a {
+        color: #feb32b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s, background-color 0.2s;
+        padding: 0.3rem 0.5rem;
+        display: block;
+        border-radius: 4px;
+    }
+    
+    .sumario ul li a:hover {
+        background-color: #2a2f3e;
+        color: #fff;
+    }
+    
+    .sumario ul li a.active {
+        background-color: #feb32b;
+        color: #000;
+    }
+    
+    /* Conteúdo principal */
+    .conteudo {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-right: 250px; /* espaço pro sumário */
+    }
+    
+    .box {
+        background-color: #1a1f2e;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    
+    .box h2 {
+        color: #feb32b;
+        margin-top: 0;
+    }
+    
+    .box p {
+        color: white;
+        line-height: 1.6;
+    }
+    
+    blockquote {
+        margin: 1.5rem 0;
+        padding: 1rem 1.5rem;
+        background-color: #2a2f3e;
+        color: #feb32b;
+        border-left: 4px solid #feb32b;
+        font-style: italic;
+      }
+      
+      .exemplo-terminal {
+        background-color: #0d1117;  /* preto bem escuro */
+        color: #00ff00;             /* verde brilhante */
+        font-family: 'Courier New', Courier, monospace; /* fonte monoespaçada */
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin: 0.5rem 0 1rem 0;
+        white-space: pre-wrap;     /* para quebrar linhas se precisar */
+        box-shadow: 0 0 10px #00ff00aa; /* brilho verde sutil */
+        user-select: all;          /* facilita selecionar o texto */
+      }
+      

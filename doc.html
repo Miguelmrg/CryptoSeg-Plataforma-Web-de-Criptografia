@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG</title>
+  <link rel="stylesheet" href="css/doc.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links">
+      <a href="index.html">Início</a> <!-- Corrigido: removido '.html.html' -->
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="#api" onclick="showPopup(event)">API</a></li>
+      <li><a href="#versionpro" onclick="showPopup(event)">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <aside class="sumario">
+        <h3>Sumário</h3>
+        <ul>
+          <li><a href="#intro">🔐 Introdução à Criptografia</a></li>
+          <li><a href="#por-que">🧩 Por que usar Criptografia?</a></li>
+          <li><a href="#tipos">🔐 Tipos de Criptografia</a></li>
+          <li><a href="#sec5">🔎 Métodos de Criptografia Disponíveis no Site</a>
+            <ul>
+              <li><a href="#cesar">Cifra de César</a></li>
+              <li><a href="#base64">Base64</a></li>
+              <li><a href="#base32">Base32</a></li>
+              <li><a href="#vigenere">Cifra de Vigenère</a></li>
+              <li><a href="#aes">AES (Simétrica)</a></li>
+              <li><a href="#rsa">RSA (Assimétrica)</a></li>
+              <li><a href="#sha256">Hash (SHA-256)</a></li>
+              <li><a href="#md5">MD5</a></li>
+              <li><a href="#sha1">SHA-1</a></li>
+              <li><a href="#sha512">SHA-512</a></li>
+              <li><a href="#binario">Binário</a></li>
+              <li><a href="#hex">HEX (Hexadecimal)</a></li>
+            </ul>
+            <li><a href="#acesso">👥 Acesso às Ferramentas</a>
+          </li>
+        </ul>
+    </aside>
+      
+
+    <section class="conteudo">
+      <div id="intro" class="box">
+        <h2>🔐 Introdução à Criptografia</h2>
+        <p>A criptografia é a técnica de proteger informações por meio da transformação de dados legíveis em um formato codificado, que só pode ser compreendido por quem tiver a chave correta. Ela é essencial para manter a privacidade, segurança, e a integridade das informações em ambientes digitais.</p>
+      </div>
+
+      <div id="por-que" class="box">
+        <h2>🧩 Por que usar Criptografia?</h2>
+        <p>Vivemos na era da informação. Dados pessoais, financeiros e corporativos circulam constantemente pela internet. A criptografia serve como uma camada de proteção contra:</p>
+        <ul>
+          <li>Vazamentos de dados</li>
+          <li>Acessos não autorizados</li>
+          <li>Alterações maliciosas</li>
+          <li>Espionagem digital</li>
+        </ul>
+        <p>Ela é utilizada por governos, bancos, empresas de tecnologia, plataformas de e-commerce, serviços de e-mail, apps de mensagem e praticamente todo serviço online que lide com informações sensíveis.</p>
+      </div>
+
+      <div id="tipos" class="box">
+        <h2>🔐 Tipos de Criptografia</h2>
+        <h3>1. Criptografia Simétrica</h3>
+        <p>Neste modelo, uma única chave é usada tanto para cifrar quanto para decifrar a informação. É rápida e ideal para grandes volumes de dados, mas exige que a chave seja compartilhada com segurança.</p>
+        <p><strong>Exemplo:</strong> AES (Advanced Encryption Standard)</p>
+        <p><strong>Usado por:</strong> WhatsApp, Google Drive, bancos, VPNs</p>
+
+        <h3>2. Criptografia Assimétrica</h3>
+        <p>Funciona com um par de chaves: uma chave pública para cifrar e uma chave privada para decifrar. É mais segura para troca de informações sem precisar compartilhar a chave secreta.</p>
+        <p><strong>Exemplo:</strong> RSA</p>
+        <p><strong>Usado por:</strong> HTTPS, bancos, autenticação digital, certificados SSL</p>
+
+        <h3>3. Funções Hash</h3>
+        <p>Transformam qualquer dado em um código fixo e irreversível. Não é possível "descriptografar" um hash. Ideal para verificação de integridade e proteção de senhas.</p>
+        <p><strong>Exemplos:</strong> SHA-256, SHA-1, SHA-512, MD5</p>
+        <p><strong>Usado por:</strong> Blockchain, sistemas de login, armazenamento de senhas</p>
+
+        <h3>4. Codificações</h3>
+        <p>Embora não sejam criptografia no sentido técnico (pois podem ser revertidas facilmente), codificações como Base64, Base32, Binário e Hexadecimal são muito usadas para representar dados em formatos compatíveis com transmissão ou leitura.</p>
+      </div>
+
+      <div id="metodos" class="box">
+        <section id="sec5" class="box">
+          <h2>🔎 Métodos de Criptografia Disponíveis no Site</h2>
+
+          <!-- Cifra de César -->
+          <div id="cesar" class="box">
+            <h3>🔁 Cifra de César (Gratuita)</h3>
+            <p>A Cifra de César desloca cada letra do alfabeto por um número fixo de posições. No nosso site, o deslocamento é de 5 posições.</p>
+            <p><strong>Como usar:</strong> digite um texto e clique em "Criptografar" ou "Descriptografar".</p>
+            <div class="exemplo-terminal">Texto: ATAQUE → FYFUZJ</div>
+            <p><strong>Usado em:</strong> jogos, desafios e fins didáticos.</p>
+          </div>
+
+          <!-- Base64 -->
+          <div id="base64" class="box">
+            <h3>📦 Base64</h3>
+            <p>Codifica qualquer dado em texto ASCII usando 64 caracteres. Ideal para enviar arquivos ou imagens como texto.</p>
+            <p><strong>Como usar:</strong> digite qualquer texto (inclusive emojis ou código) e clique em "Criptografar".</p>
+            <div class="exemplo-terminal">Texto: ChatGPT → Q2hhdEdQVA==</div>
+            <p><strong>Usado em:</strong> autenticação básica, tokens, envio de arquivos.</p>
+          </div>
+
+          <!-- Base32 -->
+          <div id="base32" class="box">
+            <h3>🔢 Base32</h3>
+            <p>Usa apenas letras A-Z e números 2-7. Muito usado em códigos OTP e sistemas de verificação.</p>
+            <p><strong>Como usar:</strong> digite seu texto e clique em "Criptografar".</p>
+            <div class="exemplo-terminal">Texto: TESTE → KRSXG5A=</div>
+            <p><strong>Usado em:</strong> TOTP, QR Codes.</p>
+          </div>
+
+          <!-- Vigenère -->
+          <div id="vigenere" class="box">
+            <h3>🔐 Cifra de Vigenère</h3>
+            <p>Usa uma palavra-chave para determinar o deslocamento de cada caractere. Mais segura que a de César.</p>
+            <p><strong>Como usar:</strong> digite o texto, informe a chave no campo de senha e clique em "Criptografar".</p>
+            <div class="exemplo-terminal">Texto: ATAQUE / Chave: CHAVE → DXLUYZ</div>
+            <p><strong>Usado em:</strong> criptografia clássica, ensino.</p>
+          </div>
+
+          <!-- AES -->
+          <div id="aes" class="box">
+            <h3>🛡 AES (Simétrica)</h3>
+            <p>Criptografia moderna que usa a mesma senha para criptografar e descriptografar. Extremamente rápida e segura.</p>
+            <p><strong>Como usar:</strong> digite o texto, insira a senha no campo e clique em "Criptografar". Use a mesma senha para "Descriptografar".</p>
+            <div class="exemplo-terminal">Texto: "Segredo123" → Criptografado: Lk2f4sdK+lsLWyZxP7ABEt==</div>
+            <p><strong>Usado em:</strong> arquivos ZIP, bancos, VPNs, sistemas de autenticação local.</p>
+          </div>
+
+
+          <!-- RSA -->
+          <div id="rsa" class="box">
+            <h3>🔑 RSA (Assimétrica)</h3>
+            <p>Criptografia de chave pública: você criptografa com a chave pública e descriptografa com a privada.</p>
+            <p><strong>Como usar:</strong></p>
+            <ul>
+              <li>Clique em <strong>“Gerar Par de Chaves RSA”</strong> no dashboard.</li>
+              <li>Copie a <strong>chave pública</strong> para criptografar e a <strong>privada</strong> para descriptografar.</li>
+              <li>Cole a chave apropriada no campo "Cole aqui a chave..." antes de clicar em criptografar ou descriptografar.</li>
+            </ul>
+            <blockquote>📌 A criptografia só funciona se a chave for compatível com a operação.</blockquote>
+            <div class="exemplo-terminal">Texto: "Mensagem" → Criptografado: 5c3a9e6d7f1b23a4b8f2d...</div>
+            <p><strong>Usado em:</strong> HTTPS, e-mails seguros, certificados digitais.</p>
+          </div>
+
+          <!-- SHA-256 -->
+          <div id="sha256" class="box">
+            <h3>🔒 Hash (SHA-256)</h3>
+            <p>Função de hash irreversível que gera um resumo de 64 caracteres (256 bits). Pequenas mudanças no texto geram um hash completamente diferente.</p>
+            <p><strong>Como usar:</strong> digite seu texto e clique em "Criptografar".</p>
+            <div class="exemplo-terminal">Senha123 → ef92b778ba5ca6f15b3f9e5f8b47202e...</div>
+            <p><strong>Usado em:</strong> blockchain, assinaturas digitais.</p>
+          </div>
+
+          <!-- MD5 -->
+          <div id="md5" class="box">
+            <h3>⚠ MD5</h3>
+            <p>Função de hash rápida, porém considerada insegura para senhas. Ainda útil para verificações de integridade.</p>
+            <p><strong>Como usar:</strong> digite qualquer texto e clique em "Criptografar".</p>
+            <div class="exemplo-terminal">"Senha123" → 4d4c2f4b8e9e0e62e4b5d1bb2e1b9f39</div>
+          </div>
+
+          <!-- SHA-1 -->
+          <div id="sha1" class="box">
+            <h3>⚠ SHA-1</h3>
+            <p>Hash mais forte que o MD5, mas já obsoleto em aplicações de segurança crítica.</p>
+            <p><strong>Como usar:</strong> clique em "Criptografar".</p>
+            <div class="exemplo-terminal">"Senha123" → b1b3773a05c0ed0176787a4f1574ff0075f7521e</div>
+          </div>
+
+          <!-- SHA-512 -->
+          <div id="sha512" class="box">
+            <h3>🔐 SHA-512</h3>
+            <p>Versão robusta da família SHA-2. Gera um hash de 128 caracteres (512 bits).</p>
+            <p><strong>Como usar:</strong> clique em "Criptografar". Não há descriptografia.</p>
+            <div class="exemplo-terminal">"Senha123" → c0535e4be2b79ffd93291305436bf88... (continua)</div>
+          </div>
+
+          <!-- Binário -->
+          <div id="binario" class="box">
+            <h3>💻 Binário</h3>
+            <p>Transforma texto em código binário. Útil em ensino e análise de bits.</p>
+            <p><strong>Como usar:</strong> digite um texto e clique em "Criptografar". Clique em "Descriptografar" para converter de volta.</p>
+            <div class="exemplo-terminal">"A" → 01000001</div>
+          </div>
+
+          <!-- HEX -->
+          <div id="hex" class="box">
+            <h3>🔢 HEX (Hexadecimal)</h3>
+            <p>Representa caracteres em formato hexadecimal (base 16), muito usado em sistemas e programação.</p>
+            <p><strong>Como usar:</strong> clique em "Criptografar" para converter o texto. Use "Descriptografar" para voltar ao original.</p>
+            <div class="exemplo-terminal">"255" → 323535</div>
+          </div>
+        </section>
+          
+      </div>
+
+      <div id="acesso" class="box">
+        <h2>👥 Acesso às Ferramentas</h2>
+        <p>Para ter acesso completo a todas as criptografias e codificações, basta se cadastrar gratuitamente em nosso site. Isso permite que você:</p>
+        <ul>
+          <li>Use ferramentas avançadas;</li>
+          <li>Acesse recursos extras e atualizações.</li>
+        </ul>
+        <p>🔓 Cifra de César está liberada para todos os usuários.<br>🔒 Outros métodos exigem login ou cadastro.</p>
+      </div>
+
+      <div id="PDFs" class="box">
+        <h2>📄Links importantes</h2>
+        <p>Aqui estão documentos e elementos gráficos produzidos durante o desenvolvimento do site:</p>
+        <ul>
+          <li><a href="pdfs/Diagrama de caso de uso.pdf" download="Diagrama de caso de uso CRYPTOSEG">Diagrama de caso de uso</a></li>
+          <li><a href="pdfs/Diagrama de fluxo.pdf" download="Diagrama de fluxo CRYPTOSEG">Diagrama de fluxo</a></li>
+          <li><a href="pdfs/Protótipo.pdf" download="Protótipo CRYPTOSEG">Protótipo</a></li>
+          <li><a href="pdfs/Wireframe.pdf" download="Wireframe CRYPTOSEG">Wireframe</a></li>
+          <li><a href="pdfs/Briefing CRYPTOSEG.pdf.pdf" download="Briefing CRYPTOSEG">Briefing</a></li>
+          <li><a href="pdfs/Regras_requisitos CRYPTOSEG.pdf" download="Regras e requisitos CRYPTOSEG">Regras e requisitos de negócio</a></li>
+
+        </ul>
+        <p>Ao clicar num link, o download de um PDF do arquivo selecionado será iniciado.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h3>Agradecemos por experimentar o CriptoSeg</h3>
+      <p>Para acessar esta funcionalidade, você precisa se cadastrar.</p>
+      <button onclick="location.href='auth.html'">Cadastre-se</button>
+      <button onclick="location.href='auth.html'">Entrar</button>
+      <button onclick="hidePopup()">Continuar na versão gratuita</button>
+    </div>
+  </div>
+
+  <script src="js/doc.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTOSEG - Versão PRO</title>
+  <link rel="stylesheet" href="css/versionpro.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-icon" id="menuToggle">☰</div>
+    <div class="branding">CRYPTOSEG <span class="subtitle">Soluções de Criptografia</span></div>
+    <div class="auth-links" id="user-info-header" style="position: relative;"></div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="doc.html">Documentação</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="versionpro.html" class="active">Versão PRO</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Escolha sua versão</h1>
+    <div class="plans">
+      <!-- Versão Gratuita -->
+      <div class="card free">
+        <h2>Versão Gratuita</h2>
+        <p class="price">R$ 0/mês</p>
+        <ul>
+          <li>✔ Acesso a criptografias básicas</li>
+          <li>✔ Interface moderna e responsiva</li>
+          <li>✔ Uso local no navegador</li>
+          <li>✔ Proteção de dados no dispositivo</li>
+        </ul>
+        <button class="btn-disabled" disabled>Ativado</button>
+      </div>
+
+      <!-- Versão PRO -->
+      <div class="card pro">
+        <h2>Versão PRO</h2>
+        <p class="price">R$ 29,90/mês</p>
+        <ul>
+          <li>✔ Tudo da versão gratuita</li>
+          <li>✔ Chave de acesso à API</li>
+          <li>✔ Prioridade nas atualizações</li>
+          <li>✔ Suporte premium por e-mail</li>
+          <li>✔ Integração com sistemas externos</li>
+          <li>✔ Gerenciamento de usuários corporativos</li>
+        </ul>
+        <button class="btn-pro" id="btnAssinarPro" onclick="assinarPro()">Assinar PRO</button>
+      </div>
+    </div>
+    <div id="mensagem-pro" style="display: none; margin-top: 2rem;">
+        <div style="background-color: #1a1f2e; padding: 1.5rem; border-radius: 10px; color: #00ffae; max-width: 400px; margin: 0 auto;">
+            🎉 Você já é <strong>PRO</strong>. Aproveite todos os recursos premium! <br/><br/>
+            <button class="btn-pro" onclick="cancelarPro()">Cancelar PRO</button>
+        </div>
+    </div>
+
+
+    <div id="metodos-pagamento" style="display: none; margin-top: 2rem;">
+        <h3 style="color: #feb32b;">Escolha o método de pagamento:</h3>
+        <ul style="list-style: none; padding: 0; color: white;">
+            <li><strong>PIX:</strong> QR Code ou chave aleatória</li>
+            <li><strong>Boleto:</strong> Gerado com vencimento de 2 dias</li>
+            <li><strong>Cartão de crédito:</strong> Em até 12x</li>
+        </ul>
+        <button class="btn-pro" onclick="pagamentoAceito()">Continuar com pagamento</button>
+    </div>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <h3>🎉 Parabéns!</h3>
+            <p>Agora você é um usuário <strong>PRO</strong> do CryptoSeg.</p>
+            <button onclick="hidePopup()">Fechar</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popupCancelProOverlay" style="display: none;">
+        <div class="popup">
+            <h3>Conta PRO Cancelada</h3>
+            <p>Você voltou para a versão gratuita do CryptoSeg.</p>
+            <button onclick="hideCancelProPopup()">Fechar</button>
+        </div>
+    </div>
+
+  </main>
+
+    <!-- Modal de exclusão de conta -->
+    <div id="deleteAccountModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <h2>Excluir Conta</h2>
+        <p>Você tem certeza? Esta ação é irreversível.</p>
+        <label for="confirmDeleteCheckbox">
+          Confirmo que desejo excluir minha conta
+          <input type="checkbox" id="confirmDeleteCheckbox" />
+        </label><br/>
+        Caso queira realmente exlcuir a conta digite:<br/> Eu tenho certeza e quero excluir a conta
+        <input type="text" id="confirmText" placeholder="Eu tenho certeza e quero excluir a conta">
+        <button onclick="confirmarExclusaoConta()">Excluir Conta Permanentemente</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+
+  <footer class="footer">
+    Versão 1.21v
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="js/versionpro.js"></script>
+</body>
+</html>

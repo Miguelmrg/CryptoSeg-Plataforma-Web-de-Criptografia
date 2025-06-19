@@ -1,0 +1,111 @@
+ body {     
+            margin: 0;
+            padding: 0;
+            background-color: #0c1221;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+
+        .auth-container {
+            width: 800px;
+            background-color: #182138;         
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 100px auto 40px auto; /* Alinhado com header fixo */
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .auth-section {
+            margin-bottom: 30px;
+        }
+        .hidden {
+            display: none;
+        }
+        .auth-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .auth-option-btn {
+            background-color: #502eb8;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .auth-option-btn.active {
+            background-color:  #feb32b;
+            color: white;
+        }
+        .auth-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            color: white;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            background-color: #262d35;
+            color: #feb32b;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color:  #feb32b;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #271074;
+        }
+        .secondary-action {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .secondary-action a {
+            color: #4285f4;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .secondary-action a:hover {
+            text-decoration: underline;
+        }
+        #user-info {
+            margin-top: 20px;
+            padding: 25px;
+            background-color: #e8f0fe;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .error-message {
+            color: #d32f2f;
+            background-color: #fde8e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
