@@ -6,7 +6,6 @@ A plataforma é construída com um sistema de autenticação de usuários seguro
 
 ## **Índice**
 
-- [**Demonstração ao Vivo**](#demonstração-ao-vivo)
 - [**Funcionalidades**](#funcionalidades)
 - [**Tecnologias Utilizadas**](#tecnologias-utilizadas)
 - [**Arquitetura do Sistema**](#arquitetura-do-sistema)
