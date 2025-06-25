@@ -1,112 +1,124 @@
-# CryptoSeg: Plataforma Web de Criptografia
+<div align="center">
+  <h1>
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked%20with%20Key.png" alt="Cadeado com Chave" width="45" height="45" />
+    CryptoSeg - Plataforma Web de Criptografia
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Key.png" alt="Chave" width="45" height="45" />
+  </h1>
+</div>
 
-O CryptoSeg é uma plataforma web completa para criptografia e descriptografia de textos, desenvolvida como um projeto para a matéria de Desenvolvimento Web. Inspirado pelo design e pelas paletas de cores de plataformas de tecnologia de ponta como ChatGPT, VirusTotal e Cryptohack, o CryptoSeg oferece uma interface intuitiva e amigável para explorar e utilizar diversos algoritmos criptográficos.
+<p align="center">
+  <img alt="Linguagem Principal" src="https://img.shields.io/github/languages/top/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia?style=for-the-badge&color=563D7C">
+  <img alt="Licença" src="https://img.shields.io/github/license/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia?style=for-the-badge&color=blue">
+  <img alt="Último Commit" src="https://img.shields.io/github/last-commit/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia?style=for-the-badge&color=green">
+</p>
 
-A plataforma é construída com um sistema de autenticação de usuários seguro, desenvolvido com Firebase, e conta com uma API dedicada, criada com FastAPI e hospedada no Railway.
+<p align="center">
+  Uma plataforma web completa para criptografia, com autenticação de usuários via Firebase e uma API dedicada em FastAPI. Inspirado em plataformas como ChatGPT e VirusTotal, o projeto une design moderno e funcionalidades robustas.
+</p>
 
-## **Índice**
+<p align="center">
+  <a href="#-visão-geral">Visão Geral</a> •
+  <a href="#-funcionalidades">Funcionalidades</a> •
+  <a href="#-tecnologias-utilizadas">Tecnologias</a> •
+  <a href="#-arquitetura">Arquitetura</a> •
+  <a href="#-como-executar-localmente">Como Executar</a> •
+  <a href="#-créditos-e-agradecimentos">Créditos</a>
+</p>
 
-- [**Funcionalidades**](#funcionalidades)
-- [**Tecnologias Utilizadas**](#tecnologias-utilizadas)
-- [**Arquitetura do Sistema**](#arquitetura-do-sistema)
-- [**Como Começar**](#como-começar)
-- [**Estrutura do Projeto**](#estrutura-do-projeto)
-- [**Agradecimentos**](#agradecimentos)
+---
 
-## **Funcionalidades**
+### ✨ Visão Geral
 
-### **Autenticação de Usuário**
+O **CryptoSeg** é uma plataforma web criada para a matéria de Desenvolvimento Web, com o objetivo de oferecer um ambiente intuitivo e seguro para a utilização de diversos algoritmos criptográficos. O sistema conta com uma interface de usuário moderna, autenticação gerenciada pelo Firebase e uma API RESTful de backend construída com FastAPI para processar as operações criptográficas.
 
-* **Cadastro e Login Seguros:** Usuários podem criar uma conta ou fazer login usando e-mail e senha, com todos os processos de autenticação gerenciados de forma segura pelo Firebase Authentication.
-* **Recuperação de Senha:** Uma funcionalidade de "Esqueci minha senha" permite que os usuários redefinam suas senhas por e-mail.
+---
 
-### **Ferramentas de Criptografia**
+### 🚀 Funcionalidades
 
-O CryptoSeg oferece uma vasta gama de ferramentas criptográficas disponíveis para usuários cadastrados, incluindo:
+#### Autenticação de Usuário
+-   **Cadastro e Login Seguros:** Autenticação completa com e-mail e senha, gerenciada pelo **Firebase Authentication**.
+-   **Recuperação de Senha:** Funcionalidade "Esqueci minha senha" com envio de link de redefinição por e-mail.
 
-* **Cifras Simétricas:**
-    * AES (Advanced Encryption Standard)
-* **Cifras Assimétricas:**
-    * RSA, com geração de par de chaves no navegador
-* **Cifras Clássicas:**
-    * Cifra de César (disponível para todos os usuários, incluindo visitantes)
-    * Cifra de Vigenère
-* **Algoritmos de Hash:**
-    * MD5
-    * SHA-1
-    * SHA-256
-    * SHA-512
-* **Esquemas de Codificação:**
-    * Base64 & Base32
-    * Binário & Hexadecimal
+#### Ferramentas de Criptografia e Codificação
+-   **Cifras Clássicas:** Cifra de César (disponível para todos) e Cifra de Vigenère.
+-   **Cifras Simétricas Modernas:** AES (Advanced Encryption Standard).
+-   **Cifras Assimétricas:** RSA, com geração de par de chaves diretamente no navegador.
+-   **Algoritmos de Hash:** MD5, SHA-1, SHA-256 e SHA-512.
+-   **Esquemas de Codificação:** Base64, Base32, Binário e Hexadecimal.
 
-### **Versão PRO e Acesso à API**
+#### Versão PRO e Acesso via API
+-   **Assinatura PRO:** Sistema de upgrade para uma versão PRO, desbloqueando acesso à API.
+-   **API RESTful:** Usuários PRO recebem uma chave de API para consumir as funcionalidades de forma programática. A API é documentada via Swagger UI.
 
-* **Assinatura PRO:** Usuários podem fazer um upgrade para a versão PRO para desbloquear funcionalidades premium.
-* **API RESTful:** Usuários PRO recebem uma chave de API exclusiva para acessar as funcionalidades do CryptoSeg de forma programática. A API é documentada com Swagger UI.
+---
 
-## **Tecnologias Utilizadas**
+### 🛠️ Tecnologias Utilizadas
 
-### **Frontend**
+O projeto é dividido em Frontend, Backend e Serviços, utilizando um ecossistema de tecnologias moderno.
 
-* **HTML5**
-* **CSS3:** Estilizado com uma interface moderna e de tema escuro.
-* **JavaScript (ES6+):** Responsável por todas as interações dinâmicas e operações criptográficas no lado do cliente.
+#### **Frontend**
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript">
+</p>
 
-### **Backend (API)**
+#### **Backend (API)**
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/PyCryptodome-a1a1a1?style=for-the-badge" alt="PyCryptodome">
+</p>
 
-* **Python 3**
-* **FastAPI:** Serve como o framework principal para a construção da API RESTful.
-* **PyCryptodome:** A biblioteca que alimenta as funções criptográficas da API.
-* **Uvicorn:** O servidor ASGI usado para rodar a aplicação FastAPI.
+#### **Infraestrutura e Serviços**
+<p>
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase">
+  <img src="https://img.shields.io/badge/Railway-0B0D12?style=for-the-badge&logo=railway&logoColor=white" alt="Railway">
+</p>
 
-### **Serviços**
+---
 
-* **Firebase:**
-    * **Authentication:** Gerencia todo o sistema de login e cadastro de usuários.
-* **Railway:** A plataforma utilizada para o deploy e hospedagem da API de backend.
+### 🏗️ Arquitetura
 
-## **Arquitetura do Sistema**
+O sistema foi projetado com uma arquitetura desacoplada:
 
-O projeto foi arquitetado com uma separação entre o frontend e o backend:
+-   **Frontend (Client-Side):** Uma aplicação estática (HTML, CSS, JS) que roda no navegador do usuário. Comunica-se com o Firebase para autenticação e com a API de backend para operações criptográficas.
+-   **Backend (API RESTful):** Uma API construída com FastAPI e hospedada no Railway. Lida com a lógica criptográfica e é protegida por autenticação via chave de API.
 
-* O **frontend** é uma aplicação do lado do cliente com a qual os usuários interagem em seus navegadores. Para visitantes, ele oferece acesso à Cifra de César. Após o login, ele se comunica com o Firebase para autenticação e com a API de backend para operações criptográficas avançadas.
-* O **backend** é uma API RESTful construída com FastAPI. Ele lida com toda a lógica criptográfica complexa e é protegido por um middleware de autenticação por chave de API.
+> A documentação completa do projeto, incluindo diagramas de caso de uso, diagramas de fluxo e wireframes, está disponível na pasta `/pdfs`.
 
-O design do projeto é detalhado nos documentos de desenvolvimento fornecidos:
-* Diagrama de Caso de Uso
-* Diagrama de Fluxo
-* Wireframes e Protótipos
+---
 
-## **Como Começar**
+### ⚙️ Como Executar Localmente
 
-Para obter uma cópia local e executá-la, siga estes passos.
+Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desenvolvimento.
 
-### **Pré-requisitos**
+#### **Pré-requisitos**
+* Navegador web moderno (Chrome, Firefox, etc.).
+* Python 3.8+ e `pip`.
+* Uma conta e um projeto configurado no **Firebase**.
 
-* Um navegador web moderno.
-* Python 3.8+ e `pip` para a API de backend.
-* Um projeto Firebase para o sistema de autenticação.
-
-### **Configuração do Frontend**
+#### **🖥️ Configuração do Frontend**
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia.git
-    cd CryptoSeg
+    git clone [https://github.com/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia.git](https://github.com/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia.git)
+    cd CryptoSeg-Plataforma-Web-de-Criptografia
     ```
 2.  **Configure o Firebase:**
-    Abra os arquivos JavaScript localizados no diretório `js/` (`api.js`, `auth.js`, etc.) e substitua o objeto `firebaseConfig` de placeholder pelas credenciais reais do seu projeto Firebase.
+    Nos arquivos do diretório `js/` (como `auth.js`, `api.js`), substitua o objeto `firebaseConfig` pelas credenciais do seu projeto:
     ```javascript
     const firebaseConfig = {
-        apiKey: "SUA_API_KEY",
-        // ... outras chaves
+      apiKey: "SUA_API_KEY",
+      authDomain: "SEU_AUTH_DOMAIN",
+      projectId: "SEU_PROJECT_ID",
+      // ... outras chaves
     };
     ```
-3.  **Execute a aplicação:**
-    Abra o arquivo `index.html` em seu navegador.
+3.  **Execute a Aplicação:**
+    Abra o arquivo `index.html` diretamente em seu navegador.
 
-### **Configuração da API de Backend**
+#### **🚀 Configuração da API de Backend**
 
 1.  **Navegue até o diretório da API:**
     ```bash
@@ -116,28 +128,42 @@ Para obter uma cópia local e executá-la, siga estes passos.
     ```bash
     pip install -r requirements.txt
     ```
-3.  **Defina sua Chave de API:**
-    Abra o arquivo `main.py` e substitua `"SUA_CHAVE_SECRETA_DA_API"` por uma chave segura e gerada aleatoriamente.
-4.  **Execute o servidor da API:**
+3.  **Execute o servidor da API:**
     ```bash
     uvicorn main:app --reload
     ```
-    A API estará disponível em `http://127.0.0.1:8000`. Você pode acessar a documentação do Swagger em `http://127.0.0.1:8000/docs`.
+    A API estará rodando em `http://127.0.0.1:8000`. A documentação interativa (Swagger UI) pode ser acessada em `http://127.0.0.1:8000/docs`.
 
-## **Estrutura do Projeto**
+---
 
-O projeto está organizado nos seguintes diretórios principais:
+### 📂 Estrutura do Projeto
 
-* **`/`**: Contém todos os arquivos HTML das páginas do site.
-* **`css/`**: Todos os arquivos CSS para a estilização das diferentes páginas.
-* **`js/`**: Arquivos JavaScript responsáveis pela lógica do frontend.
-* **`pdfs/`**: Documentação do projeto, incluindo diagramas e requisitos.
-* **`crypto_api/`**: A aplicação de backend FastAPI.
-    * **`utils/`**: Módulos Python com as implementações dos algoritmos criptográficos.
-    * **`main.py`**: O arquivo principal da aplicação FastAPI, que define os endpoints da API.
+```
+├── css/
+│   └── (Arquivos de estilo)
+├── js/
+│   ├── auth.js         # Lógica de autenticação com Firebase
+│   ├── api.js          # Lógica de chamada para a API
+│   └── ...
+├── pdfs/
+│   └── (Documentação e diagramas do projeto)
+├── crypto_api/
+│   ├── utils/          # Módulos com algoritmos criptográficos
+│   ├── main.py         # Arquivo principal da API FastAPI
+│   └── requirements.txt
+└── *.html              # Páginas principais do site
+```
 
-## **Agradecimentos**
+---
 
-* Este projeto foi criado para a disciplina de Desenvolvimento Web.
-* O design de UI/UX foi inspirado em plataformas líderes do setor, como **ChatGPT**, **VirusTotal** e **Cryptohack**.
-* Agradecimentos especiais aos instrutores do curso e aos colaboradores que contribuíram para o desenvolvimento do projeto.
+### 🙌 Créditos e Agradecimentos
+
+-   Projeto desenvolvido para a disciplina de **Desenvolvimento Web**.
+-   UI/UX inspirado em plataformas de tecnologia de ponta como **ChatGPT**, **VirusTotal** e **Cryptohack**.
+-   Agradecimentos aos professores e colegas que apoiaram o desenvolvimento.
+
+<hr>
+
+<p align="center">
+  Desenvolvido por <b>vrsmarcos26</b>
+</p>
