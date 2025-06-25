@@ -92,7 +92,7 @@ Para obter uma cópia local e executá-la, siga estes passos.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/CryptoSeg.git](https://github.com/SEU_USUARIO/CryptoSeg.git)
+    git clone https://github.com/vrsmarcos26/CryptoSeg-Plataforma-Web-de-Criptografia.git
     cd CryptoSeg
     ```
 2.  **Configure o Firebase:**
