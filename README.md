@@ -166,5 +166,5 @@ Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desen
 
 <p align="center">
   Desenvolvido por <b>vrsmarcos26</b>
-  <b>Miguelmrg</b>
+  <b>- Miguelmrg</b>
 </p>
